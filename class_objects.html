@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Person {
+
+            
+
+            constructor(firstName, lastName, age) {
+
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+
+            }
+
+            eats() {
+
+                alert("a person eats");
+            }
+
+            /*
+            Javascript rende possibile l'Overriding
+            dei metodi all'interno di una stessa Classe
+            */
+            eats() {
+
+                alert("some people eat a lot");
+            }
+
+
+        }
+
+        class Student extends Person {
+
+            constructor(firstName, lastName, age, passportNumber) {
+
+                super(firstName, lastName, age);
+                this.passportNumber = passportNumber;
+
+
+            }
+
+            studies() {
+
+                alert("a student studies")
+
+
+            }
+
+
+        }
+
+
+        const d = new Person();
+        console.log(d);
+        const person = new Person("Marco", "Verdi", 24);
+        console.log(person);
+        person.eats();
+        const student = new Student("Maria", "Proto", 25, "1028X");
+        student.eats();
+        student.studies();
+
+
+    </script>
+
+</body>
+
+</html>

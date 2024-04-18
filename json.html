@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <aside id="p1"></aside>
+    <aside id="p2"></aside>
+    <aside id="p3"></aside>
+    
+
+
+<script>
+
+// MOCK DI UN SIMPLE JSON
+const person1 = {
+
+  "firstName":"Mario",
+  "lastName":"Rossi",
+  "age":21
+
+
+}
+
+// MOCK DI UN COMPLEX JSON
+const person2 = {
+
+  "firstName":"Teresa",
+  "lastName":"Verdi",
+  "age":24,
+  "car":["fiat","dacia"]
+
+}
+
+// MOCK DI UN COMPLEX JSON
+const person3 = {
+
+"firstName":"Giulio",
+"lastName":"Bianchi",
+"age":36,
+"car": {
+
+    "car1":"fiat",
+    "car2":"dacia"
+}
+
+}
+
+document.querySelector("#p1").innerHTML=person1.firstName + " " + person1.lastName + " " +
+person1.age
+
+document.querySelector("#p2").innerHTML=person2.firstName + " " + person2.lastName + " " +
+person2.age + " " + person2.car
+
+document.querySelector("#p3").innerHTML=person3.firstName + " " + person3.lastName + " " +
+person3.age + " " + person3.car.car1 + " " + person3.car.car2
+
+
+</script>
+
+
+</body>
+</html>

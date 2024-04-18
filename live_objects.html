@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <aside id="p1"></aside>
+    <aside id="p2"></aside>
+    <aside id="p3"></aside>
+    
+<script>
+
+const person1 = {
+
+    firstName:"Mario",
+    lastName:"Rossi",
+    age:24
+}
+
+
+const person2 = new Object();
+person2.firstName="Marco";
+person2.lastName="Verdi";
+person2.age=26;
+
+
+function Person(firstName,lastName,age){
+
+   
+    /*
+    utilizzando la parola chiave this all'interno
+    del corpo di una funzione possiamo creare delle
+    variabili locali alla funzione
+
+    Nalle fattistpecie stiamo assegnando alle variabili
+    locali il valore dei parametri in input alla funzione
+    */
+
+    this.firstName=firstName;
+    this.lastName=lastName;
+    this.age=age;
+
+}
+
+
+const person3 = new Person("Gioele","Marini",21);
+
+// CLONE DI UN OGGETTO TRAMITE SPREAD OPERATOR(DA ECMA SCRIPT 2018)
+const person4 = {...person3};
+person3.address="Via dei Mille";
+console.log(person3)
+console.log(person4)
+
+//Object.assign--->>creare una nuova reference che referenzia lo stesso indirizzo di memoria creato precedentemente
+const person5 = Object.assign(person1);
+person1.address="Via Laurentina";
+console.log(person1);
+console.log(person5);
+
+/*
+La differenza tra ... e Object.assign
+è che il primo non modifica il target Object(destinazoione)
+mentre il secondo modifica il target object
+*/
+
+
+document.querySelector("#p1").innerHTML=person1.firstName + " "  + person1.lastName + 
+" " + person1.age
+
+
+document.querySelector("#p2").innerHTML=person2.firstName + " "  + person2.lastName + 
+" " + person2.age
+
+document.querySelector("#p3").innerHTML=person3.firstName + " "  + person3.lastName + 
+" " + person3.age
+
+
+
+</script>
+
+
+</body>
+</html>
